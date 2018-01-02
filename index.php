@@ -11,18 +11,22 @@
 			<?php say_hello(); ?>
 		</h1>
 
-    <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+    <?php if(have_posts()) : ?>
+
+      <?php while(have_posts()) : the_post(); ?>
 
           <div class="post">
             <a href= "<?php the_permalink(); ?>">
               <h2><?php the_title(); ?></h2>
-              <?php the_category() ?>
+              <?php the_category(); ?>
               <?php the_content(); ?>
             </a>
 
           </div>
 
-        <?php endwhile; endif; ?>
+        <?php endwhile; ?>
+
+    <?php endif; ?>
 
 	</body>
 </html>
