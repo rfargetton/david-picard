@@ -13,18 +13,20 @@
 
     <?php if(have_posts()) : ?>
 
-      <?php while(have_posts()) : the_post(); ?>
+      <div class="posts">
+        <?php while(have_posts()) : the_post(); ?>
 
-          <div class="post">
-            <a href= "<?php the_permalink(); ?>">
-              <h2><?php the_title(); ?></h2>
-              <?php the_category(); ?>
-              <?php the_content(); ?>
-            </a>
+            <div id="<?php the_title(); ?>" class="project-thumbnail">
+              <a href= "<?php the_permalink(); ?>">
+                <h2><?php the_title(); ?></h2>
+                <p><?php the_field('date'); ?></p>
+                <?php the_content(); ?>
+              </a>
 
-          </div>
+            </div>
 
-        <?php endwhile; ?>
+          <?php endwhile; ?>
+      </div>
 
     <?php endif; ?>
 
