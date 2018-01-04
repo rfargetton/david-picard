@@ -33,6 +33,9 @@
 
 	add_action('wp_enqueue_scripts', 'enqueue_test');
   add_action('after_setup_theme', 'test_theme_setup');
+
   add_theme_support('post-thumbnails');
+  add_theme_support('post-formats',  array('aside', 'image', 'video'));
+
 
 ?>
