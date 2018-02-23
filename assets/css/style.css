@@ -186,9 +186,12 @@ main {
   display: flex;
   flex-wrap: wrap;
 }
-.project h1, .project-details {
+.project-content, .project-details {
+  margin: 90px 60px;
   width: calc(50% - 120px);
-  margin: 120px 60px;
+}
+.project-details > h1 {
+  margin-bottom: 30px;
 }
 .project-details > .info {
   display: flex;
@@ -196,6 +199,9 @@ main {
 }
 .info > p {
   width: 50%;
+}
+.project-content p {
+  margin-bottom: 15px;
 }
 .swipe {
   margin: 0 30px;

@@ -17,9 +17,9 @@
 
 <article id="post-<?php the_ID(); ?>" class="project">
 
-  <h1><?php the_title(); ?></h1>
 
   <div class="project-details">
+    <h1><?php the_title(); ?></h1>
 
     <div class="info">
       <p>
@@ -33,12 +33,15 @@
       </p>
     </div>
 
+  </div>
+
+  <div class="project-content">
+
     <div class="content">
       <?php the_content() ?>
     </div>
 
   </div>
-
 
   <div class="gallery grid">
 
