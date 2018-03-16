@@ -22,6 +22,19 @@
 		echo "Bienvenue sur le site de ".get_bloginfo('name');
 	}
 
+  //
+
+  function get_orientation($id){
+    $img = wp_get_attachment_metadata( $id );
+    $width = $img[width];
+    $height = $img[height];
+    if ($width < $height){
+      echo "portrait";
+    } else {
+      echo "landscape";
+    }
+  }
+
   // removing the gallery shortcode from the_content()
 
   function remove_gallery($content) {

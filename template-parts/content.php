@@ -45,12 +45,19 @@
 
   <div class="gallery grid">
 
-    <?php
-      foreach( $gallery['src'] as $src ) : ?>
-          <li class="cell"><img src="<?php echo $src; ?>" class="my-custom-class" alt="Gallery image" /></li>
-          <?php
-      endforeach;
-     ?>
+    <div class="gallery-inner">
+
+      <?php
+        $id_array = explode(",", $gallery['ids']);
+        for ($i=0; $i < count($gallery['src']); $i++) {
+          $src = $gallery['src'][$i];
+          $id = $id_array[$i];
+        ?>
+          <li class="cell <?php echo get_orientation($id) ?>"><img src="<?php echo $src; ?>" /></li>
+        <?php }
+      ?>
+
+    </div>
 
   </div>
 

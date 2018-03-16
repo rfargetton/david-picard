@@ -9,6 +9,8 @@ body {
   margin: 0;
   padding: 0;
 }
+main {
+}
 h1, h2, h3, h4, h5, p {
   letter-spacing: 0.03em;
   line-height: 1.25em;
@@ -149,36 +151,54 @@ main {
 /* Grid */
 
 .grid {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
   list-style: none;
   margin: 0 30px;
   padding: 0;
   width: calc(100% - 60px);
 }
-.grid > li {
+.gallery-inner {
+  margin: -4px;
+}
+.gallery-inner::after{
+  clear: both;
+  content: " ";
+  display: block;
+  height: 0;
+}
+.grid li {
+  float: left;
+  outline: 4px solid white;
+  outline-offset: -4px;
+  overflow: hidden;
+  position: relative;
   width: 50%;
 }
+
+.grid li img {
+  height: auto;
+  width: 101%;
+}
 .grid article {
-  position: relative;
+  height: 100%;
+  left:0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 .grid article header {
   background-color: rgba(0, 0, 0, 0.55);
   color: #FFF;
   height: calc(100% - 120px);
-  left:0;
   opacity: 0;
+  outline: 4px solid white;
+  outline-offset: -4px;
   padding: 60px;
-  position: absolute;
-  top: 0;
-  width: calc(100% - 120px);
+  transition: opacity 0.5s;
 }
-.grid img {
-  display: block;
-  height: auto;
-  width: 100%;
+.grid article header p {
+  margin-bottom: 8px;
 }
+
 
 /* Project Page */
 

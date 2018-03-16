@@ -15,19 +15,23 @@
 			Bienvenue sur <?php echo $section  ?>
 		</h1> -->
 
-    <ul class="grid">
-      <?php
-        $projects = new WP_Query(array('category_name'=> $section ));
-        if($projects->have_posts()) :
+    <div class="grid">
 
-          while($projects->have_posts()) : $projects->the_post();
+      <div class="gallery-inner">
+        <?php
+          $projects = new WP_Query(array('category_name'=> $section ));
+          if($projects->have_posts()) :
 
-            get_template_part('template-parts/featured');
+            while($projects->have_posts()) : $projects->the_post();
 
-          endwhile;
+              get_template_part('template-parts/featured');
 
-        endif; ?>
-    </ul>
+            endwhile;
+
+          endif; ?>
+      </div>
+
+    </div>
 
   </main>
 
