@@ -11,24 +11,22 @@
 
   <main>
 
-		<!-- <h1>
-			Bienvenue sur <?php echo $section  ?>
-		</h1> -->
+    <div class="container">
 
-    <div class="grid">
+      <div class="main grid">
 
-      <div class="gallery-inner">
-        <?php
-          $projects = new WP_Query(array('category_name'=> $section ));
-          if($projects->have_posts()) :
+          <?php
+            $projects = new WP_Query(array('category_name'=> $section ));
+            if($projects->have_posts()) :
 
-            while($projects->have_posts()) : $projects->the_post();
+              while($projects->have_posts()) : $projects->the_post();
 
-              get_template_part('template-parts/featured');
+                get_template_part('template-parts/featured');
 
-            endwhile;
+              endwhile;
 
-          endif; ?>
+            endif; ?>
+
       </div>
 
     </div>

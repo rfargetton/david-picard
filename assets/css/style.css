@@ -9,8 +9,7 @@ body {
   margin: 0;
   padding: 0;
 }
-main {
-}
+
 h1, h2, h3, h4, h5, p {
   letter-spacing: 0.03em;
   line-height: 1.25em;
@@ -24,7 +23,7 @@ h1 {
   font-weight: 500;
 }
 h2 {
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 500;
 }
 h3 {
@@ -47,9 +46,15 @@ button:focus {
   position: fixed;
   font-size: 18px;
   left: 0;
+  overflow: hidden ;
   top: 0;
   width: 100%;
   z-index: 900;
+  -ms-transition: height 1s ;
+  -moz-transition: height 1s ;
+  -webkit-transition: height 1s ;
+  -o-transition: height 1s ;
+  transition: height 0.5s ;
 }
 
 .title {
@@ -61,13 +66,12 @@ button:focus {
   padding: 0 60px;
 }
 .navigation {
-  cursor: pointer;
   margin: 30px 0;
   width: 50%;
 }
 .navigation > span {
   cursor: pointer;
-  padding: 0 60px;
+  padding: 0 30px;
   position: relative;
   z-index: 900;
 }
@@ -78,6 +82,10 @@ button:focus {
   position: absolute;
   right: 0;
   top: 0;
+  -moz-transition: height 1s ;
+  -ms-transition: height 1s ;
+  -webkit-transition: height 1s ;
+  -o-transition: height 1s ;
   transition: height 1s ;
   width: 50%;
   z-index: 800;
@@ -85,7 +93,7 @@ button:focus {
 .slide-menu > ul {
   list-style: none;
   margin-top: 100px;
-  padding: 0 60px;
+  padding: 0 60px 0 30px;
 }
 .slide-menu > ul > li {
   font-size: 36px;
@@ -110,10 +118,12 @@ button:focus {
   display: block;
   height: 2px;
   position: absolute;
-  transition: all 200ms ease-in-out;
   width: 24px;
-  -webkit-transition: -webkit-transform 0.2s;
+  -ms-transition: -webkit-transform 0.2s;
+  -moz-transition: -webkit-transform 0.2s;
   -webkit-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 .menu-icon span:first-child {
   top: 4px;
@@ -125,15 +135,19 @@ button:focus {
   top: 16px;
 }
 .active span:first-child {
-  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
   transform: rotate(45deg);
   position: absolute;
   top: 10px;
 }
 .active span:last-child {
-  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   position: absolute;
   top: 10px;
@@ -147,19 +161,34 @@ button:focus {
 main {
   margin-top: 84px;
 }
+.container {
+  margin: 0 30px;
+}
+.main article {
+  opacity: 0;
+}
+.main li img, .nextprev-navigation li img {
+  -moz-transition: transform 0.5s;
+  -ms-transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+  transition: transform 0.5s;
+}
+.main li:hover article {
+  opacity: 1;
+}
+.main li:hover img {
+  transform: scale(1.05);
+}
 
 /* Grid */
 
 .grid {
   list-style: none;
-  margin: 0 30px;
-  padding: 0;
-  width: calc(100% - 60px);
-}
-.gallery-inner {
   margin: -4px;
+  width: calc(100% + 8px);
 }
-.gallery-inner::after{
+.grid::after{
   clear: both;
   content: " ";
   display: block;
@@ -167,38 +196,42 @@ main {
 }
 .grid li {
   float: left;
-  outline: 4px solid white;
-  outline-offset: -4px;
+  margin: 4px; 
   overflow: hidden;
   position: relative;
-  width: 50%;
+  width: calc(50% - 8px);
 }
-
 .grid li img {
+  display: block;
   height: auto;
-  width: 101%;
+  margin: auto;
+  width: 102%;
 }
 .grid article {
+  background-color: rgba(0, 0, 0, 0.55);
+  color: #FFF;
+  display: table;
   height: 100%;
   left:0;
+  /* outline: 4px solid white;
+  outline-offset: -4px; */
   position: absolute;
   top: 0;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
   width: 100%;
 }
 .grid article header {
-  background-color: rgba(0, 0, 0, 0.55);
-  color: #FFF;
-  height: calc(100% - 120px);
-  opacity: 0;
-  outline: 4px solid white;
-  outline-offset: -4px;
-  padding: 60px;
-  transition: opacity 0.5s;
+  display: table-cell;
+  padding: 0 30px;
+  vertical-align: middle;
 }
 .grid article header p {
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
-
 
 /* Project Page */
 
@@ -207,11 +240,11 @@ main {
   flex-wrap: wrap;
 }
 .project-content, .project-details {
-  margin: 90px 60px;
-  width: calc(50% - 120px);
+  margin: 75px 30px;
+  width: calc(50% - 60px);
 }
-.project-details > h1 {
-  margin-bottom: 30px;
+.project-details > h2, .project-details > p {
+  margin-bottom: 15px;
 }
 .project-details > .info {
   display: flex;
@@ -224,7 +257,6 @@ main {
   margin-bottom: 15px;
 }
 .swipe {
-  margin: 0 30px;
   overflow: hidden;
   position: relative;
   visibility: hidden;
@@ -240,4 +272,170 @@ main {
 }
 .swipe-wrap > div > img {
   max-width: 100%;
+}
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 0;
+  max-width: 100%;
+  height: 0;
+}
+.video .video-thumb {
+  z-index: 200;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.video .video-thumb #play-button {
+  cursor: pointer;
+  z-index: 250;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  padding: 0;
+  width: 134px;
+  height: 134px;
+  text-indent: -9999px;
+  border: 3px solid white;
+  border-radius: 50%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  -moz-transform: translate3d(-67px, -67px, 0px) scale3d(1, 1, 1);
+  -ms-transform: translate3d(-67px, -67px, 0px) scale3d(1, 1, 1);
+  -webkit-transform: translate3d(-67px, -67px, 0px) scale3d(1, 1, 1);
+  transform: translate3d(-67px, -67px, 0px) scale3d(1, 1, 1);
+  -moz-transition: -moz-transform 0.2s , opacity 0.2s;
+  -ms-transition: -ms-transform 0.2s, opacity 0.2s;
+  -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+  -o-transition: -o-transform 0.2s, opacity 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
+
+ }
+.video .video-thumb #play-button:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0px;
+  height: 0px;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 44px solid white;
+  -moz-transform: translate3d(-16px, -28px, 0px);
+  -ms-transform: translate3d(-16px, -28px, 0px);
+  -webkit-transform: translate3d(-16px, -28px, 0px);
+  -o-transform: translate3d(-16px, -28px, 0px);
+  transform: translate3d(-16px, -28px, 0px);
+}
+.video iframe {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.nextprev-navigation {
+  margin-top : 90px;
+}
+.next {
+  float: right;
+}
+.nextprev-navigation article {
+  opacity: 1;
+}
+.nextprev-navigation li:hover article {
+  opacity: 0;
+}
+.nextprev-navigation li:hover img {
+  transform: scale(1.05);
+}
+.previous {
+  float: left;
+}
+/*  Loader */
+
+.loader {
+  background-color: #FFF;
+  height: 100%;
+  left: 0;
+  opacity: 0.85;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9998;
+  -moz-transition : opacity 1s;
+  -ms-transition : opacity 1s;
+  -webkit-transition : opacity 1s;
+  -o-transition : opacity 1s;
+  transition: opacity 1s;
+}
+.logo {
+  height: 58px;
+  width: 58px;
+  position: fixed;
+  bottom: 60px;
+  left: 60px;
+  z-index: 9999;
+}
+.loading{
+  -moz-animation: spin 2s linear infinite;
+  -ms-animation: spin 2s linear infinite;
+	-webkit-animation: spin 2s linear infinite;
+  -o-animation: spin 2s linear infinite;
+	animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  	0% { -webkit-transform: rotate(0deg); }
+  	100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  	0% { transform: rotate(0deg); }
+  	100% { transform: rotate(360deg); }
+}
+/* Footer */
+
+footer{
+  position: relative;
+  margin: 60px 0;
+}
+footer .footer-info {
+  height: auto;
+  list-style: none;
+  display: block;
+  margin: 0 30px;
+  position: relative;
+  float: right;
+  width: calc(50% - 60px);
+}
+footer::after{
+  clear: both;
+  content: " ";
+  display: block;
+  height: 0;
+}
+
+/* Mobile Sizes */
+
+@media only screen and (max-width:960px) {
+
+  .grid li {
+    width: 100%;
+  }
+  
+  .project-content, .project-details {
+    margin: 45px 30px;
+    width: 100%;
+  }
+  .navigation > span {
+    display: none;
+  }
+
 }

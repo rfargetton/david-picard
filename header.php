@@ -12,7 +12,9 @@
 		<?php wp_head(); ?>
 	</head>
 	<body>
-
+    <div class="logo loading">
+      <img src="<?php echo get_template_directory_uri()."/assets/dp-logo.svg"; ?>" alt="logo">
+    </div>
   	<header class="site-header">
 
   		<a class="title" href="<?php echo get_home_url(); ?>">

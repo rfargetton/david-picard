@@ -1,21 +1,23 @@
 <?php
-  $slideshow = get_post_galleries( get_the_ID(), false )[0];
-  $gallery = get_post_galleries( get_the_ID(), false )[1];
+  $gallery = get_post_galleries( get_the_ID(), false )[0];
+  $next = get_next_post(true, "", 'category');
+  $previous = get_previous_post(true, "", 'category');
 ?>
-<div id="slider" class="swipe">
+<div class="video-player">
 
-  <div class="swipe-wrap">
-    <?php
-      foreach( $slideshow['src'] as $src ) : ?>
-          <div><img src="<?php echo $src; ?>" class="my-custom-class" alt="Gallery image" /></div>
-          <?php
-      endforeach;
-     ?>
+  <div class="video vimeo	playing">
+
+  	<iframe src="https://player.vimeo.com/video/<?php the_field('vimeo_video_id'); ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen id="video"></iframe>
+  	<div class="video-thumb" style="background-image: url(<?php the_field('video_image'); ?>);">
+  	<div id="play-button"></div>
+  	</div>
+
   </div>
 
 </div>
 
 <article id="post-<?php the_ID(); ?>" class="project">
+
 
   <div class="project-details">
       
@@ -58,7 +60,9 @@
 
 <div class="nextprev-navigation grid">
 
+
     <?php get_template_part('template-parts/previous'); ?>
     <?php get_template_part('template-parts/next'); ?>
+
 
 </div>
