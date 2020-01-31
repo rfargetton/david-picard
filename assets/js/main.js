@@ -14,28 +14,38 @@ function tileGallery(){
 
     landscapeHeight = Math.trunc(galleryWidth/3 * 2) ;
     portraitHeight = Math.trunc(galleryWidth/3 * 4) ;
+
     for (var i = 0; i < landscape.length; i++) {
       landscape[i].style.height = landscapeHeight + "px";
     }
 
-    for (var i = 0; i < portrait.length; i++) {
-      var nextSibling = portrait[i].nextElementSibling ;
+    for (let i = 0; i < portrait.length; i++) {
+      const nextSibling = portrait[i].nextElementSibling ;
+      const previousSibling = portrait[i].previousElementSibling ;
+
       portrait[i].style.height = portraitHeight + "px";
-      nextSibling.style.marginTop = "4px" ;
+      if (nextSibling && nextSibling.classList.contains('landscape') && previousSibling.classList.contains('landscape')) {
+        nextSibling.style.marginTop = "4px" ;
+      }
     }
 
   } else {
 
     landscapeHeight = Math.trunc(galleryWidth/6 * 2) ;
     portraitHeight = Math.trunc(galleryWidth/6 * 4) ;
-    for (var i = 0; i < landscape.length; i++) {
+
+    for (let i = 0; i < landscape.length; i++) {
       landscape[i].style.height = (landscapeHeight - 4) + "px";
     }
 
-    for (var i = 0; i < portrait.length; i++) {
-      var nextSibling = portrait[i].nextElementSibling ;
+    for (let i = 0; i < portrait.length; i++) {
+      const nextSibling = portrait[i].nextElementSibling ;
+      const previousSibling = portrait[i].previousElementSibling ;
+
       portrait[i].style.height = portraitHeight + "px";
-      nextSibling.style.marginTop = "-" + landscapeHeight + "px" ;
+      if (nextSibling && nextSibling.classList.contains('landscape') && previousSibling.classList.contains('landscape')) {
+        nextSibling.style.marginTop = "-" + landscapeHeight + "px" ;
+      }
     }
 
   }
@@ -53,7 +63,7 @@ function throttle(fn, wait) {
       fn();
       timeInMs = Date.now();
     }
-  }
+  };
 
 }
 
@@ -109,6 +119,8 @@ var delta = 5;
 function slideUpHeader(){
 
   var scrollY = window.scrollY ;
+  var documentWidth = document.querySelector("body").offsetWidth;
+  var headerHeight = documentWidth > 570 ? '84px' : '54px';
 
   if(Math.abs(lastScroll - scrollY) <= delta){
     return;
@@ -120,7 +132,7 @@ function slideUpHeader(){
 
   } else {
 
-    document.querySelector("header").style.height = "84px";
+    document.querySelector("header").style.height = headerHeight;
 
   }
 
@@ -190,7 +202,6 @@ window.addEventListener("load", function(){
 
 window.addEventListener("resize", throttle(tileGallery, 30), false);
 
-tileGallery();
 
 // Calling Hover hoverEffect Function on load
 
@@ -225,3 +236,5 @@ if(playButton){
   });
 
 }
+
+tileGallery();

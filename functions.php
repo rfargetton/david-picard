@@ -24,10 +24,34 @@
 
   //
 
+  // Get Corresponding Category for each Page
+
+  function get_corresponding_category_ID( $id ) {
+    switch ($id) {
+      case 73 :
+        return 5;
+        break;
+      case 34 :
+        return 6;
+        break;
+      case 42 :
+        return 7;
+        break;
+      case 39 :
+        return 9;
+        break;
+      case 18 :
+        return 10;
+        break;
+    }
+  }
+
+
+  // Get Image Type for Tile Gallery Script 
   function get_orientation($id){
     $img = wp_get_attachment_metadata( $id );
-    $width = $img[width];
-    $height = $img[height];
+    $width = $img['width'];
+    $height = $img['height'];
     if ($width < $height){
       echo "portrait";
     } else {
@@ -92,7 +116,7 @@
   function enqueue_test() {
 		wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/css/style.css', array(), false, 'all' );
 		wp_enqueue_script( 'swipe', get_template_directory_uri() . '/assets/js/swipe.js', array(), false, true);
-    wp_enqueue_script( 'vimeo','https://player.vimeo.com/api/player.js', array(), false, true);
+                wp_enqueue_script( 'vimeo','https://player.vimeo.com/api/player.js', array(), false, true);
 		wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array(), false, true);
   }
 

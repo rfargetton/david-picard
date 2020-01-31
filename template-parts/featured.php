@@ -11,7 +11,7 @@
       <article>
         <header>
           <p><?php the_field('date'); ?></p>
-          <h3><?php the_title(); ?></h3>
+          <h2><?php the_title(); ?></h2>
         </header>
       </article>
 

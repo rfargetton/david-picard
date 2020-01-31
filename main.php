@@ -5,8 +5,8 @@
   */
 
 	get_header();
-  $section = strtolower(get_the_title());
-
+        $cat_ID = get_corresponding_category_ID(get_the_ID());
+  
 ?>
 
   <main>
@@ -16,7 +16,8 @@
       <div class="main grid">
 
           <?php
-            $projects = new WP_Query(array('category_name'=> $section ));
+            $args = array( 'cat' => $cat_ID );
+            $projects = new WP_Query($args);
             if($projects->have_posts()) :
 
               while($projects->have_posts()) : $projects->the_post();

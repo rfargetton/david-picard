@@ -1,6 +1,8 @@
 <?php
+  $category = get_the_category()[0];
   $slideshow = get_post_galleries( get_the_ID(), false )[0];
   $gallery = get_post_galleries( get_the_ID(), false )[1];
+
 ?>
 <div id="slider" class="swipe">
 
@@ -19,14 +21,26 @@
 
   <div class="project-details">
       
-    <p><?php the_field('date'); ?></p>
-    <h2><?php the_title(); ?></h2>
-    <p>
-        <?php the_field('type'); ?></br>
-        <?php if (the_field('medium')) :
-            the_field('medium');
-          endif; ?>
-    </p>
+    <p class='date'><?php the_field('date'); ?></p>
+    <h1><?php the_title(); ?></h1>
+
+    <?php if (in_category('travaux')) : ?>
+      <p>
+        <?php the_field('type') ?></br>
+        <?php the_field('details') ?>
+      </p>
+    <?php endif; ?>
+  
+    <?php if (in_category('expositions')) : ?>
+      <p>
+        <?php the_field('description') ?></br>
+        <?php the_field('lieu') ?>
+      </p>
+    <?php endif; ?>
+
+    <?php if (get_field('informations')) : ?>
+      <p class='informations'><?php the_field('informations') ?></p>
+    <?php endif; ?>
 
   </div>
 

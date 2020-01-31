@@ -1,7 +1,6 @@
 
 <article id="post-<?php the_ID(); ?>" class="project">
 
-
   <div class="project-details">
 
     <h1><?php the_title(); ?></h1>
@@ -15,6 +14,5 @@
     </div>
 
   </div>
-
 
 </article>

@@ -2,7 +2,9 @@
 
 /* Global */
 
-html,
+html {
+  font-size: 20px;
+}
 body {
   display: block;
   font-family: 'Work Sans', sans-serif;
@@ -11,24 +13,25 @@ body {
 }
 
 h1, h2, h3, h4, h5, p {
-  letter-spacing: 0.03em;
-  line-height: 1.25em;
+  line-height: 1.15em;
   margin: 0;
 }
 p {
   font-weight: 300;
+  line-height: 1.5em;
+  letter-spacing: 0.025rem
 }
 h1 {
-  font-size: 48px;
+  font-size: 2rem;
   font-weight: 500;
 }
 h2 {
-  font-size: 40px;
+  font-size: 1.75rem;
   font-weight: 500;
 }
 h3 {
-  font-size: 30px;
-  font-weight: 300;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 a {
   color: #666;
@@ -47,6 +50,7 @@ button:focus {
   font-size: 18px;
   left: 0;
   overflow: hidden ;
+  justify-content: space-between;
   top: 0;
   width: 100%;
   z-index: 900;
@@ -60,7 +64,7 @@ button:focus {
 .title {
   color: #000;
   margin: 30px 0;
-  width: 50%;
+  z-index: 1000;
 }
 .title > div {
   padding: 0 60px;
@@ -68,7 +72,10 @@ button:focus {
 .navigation {
   margin: 30px 0;
   width: 50%;
+  display: flex;
+  justify-content: space-between;
 }
+
 .navigation > span {
   cursor: pointer;
   padding: 0 30px;
@@ -93,7 +100,7 @@ button:focus {
 .slide-menu > ul {
   list-style: none;
   margin-top: 100px;
-  padding: 0 60px 0 30px;
+  padding: 0 30px ;
 }
 .slide-menu > ul > li {
   font-size: 36px;
@@ -235,17 +242,39 @@ main {
 
 /* Project Page */
 
+.avatar {
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 400px;
+}
+.avatar > img {
+  width: 100%;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.intro-text {
+  font-size: 1.5rem;
+  font-weight: 500 !important;
+}
+
 .project {
   display: flex;
   flex-wrap: wrap;
 }
-.project-content, .project-details {
+.project-content, .project-details, .intro-text {
   margin: 75px 30px;
   width: calc(50% - 60px);
 }
-.project-details > h2, .project-details > p {
-  margin-bottom: 15px;
+.project-details > * {
+  margin-bottom: 0.5em;
 }
+.date {
+  font-weight: 500;
+}
+.informations {
+  font-size: 0.8rem;
+}
+
 .project-details > .info {
   display: flex;
   margin-bottom: 30px;
@@ -407,13 +436,14 @@ footer{
   margin: 60px 0;
 }
 footer .footer-info {
+  box-sizing: border-box;
   height: auto;
   list-style: none;
   display: block;
-  margin: 0 30px;
+  padding: 0 30px;
   position: relative;
   float: right;
-  width: calc(50% - 60px);
+  width: 50%;
 }
 footer::after{
   clear: both;
@@ -426,16 +456,99 @@ footer::after{
 
 @media only screen and (max-width:960px) {
 
+  html {
+    font-size: 17.5px;
+  }
+
   .grid li {
-    width: 100%;
+    width: calc(100% - 8px);
   }
   
-  .project-content, .project-details {
-    margin: 45px 30px;
+  .project-content, .project-details, .intro-text {
+    margin: 45px 15px;
     width: 100%;
   }
+
+  .navigation {
+    width: auto;
+  }
+
   .navigation > span {
     display: none;
+  }
+
+  .slide-menu {
+    width: 100%;
+  }
+
+  .slide-menu > ul {
+    padding: 0 45px;
+  }
+
+  .title > div {
+    padding: 0 45px;
+  }
+
+  .menu-icon {
+    margin-right: 45px;
+  }
+  
+  .grid article header {
+    display: table-cell;
+    padding: 0 15px;
+    vertical-align: middle;
+  }
+
+  .logo {
+    bottom: 45px;
+    left: 45px;
+  }
+
+  footer .footer-info {
+    width: 100%;
+    margin-bottom: 100px;
+    padding: 0 45px;
+  }
+
+}
+
+@media only screen and (max-width:570px) {
+
+  html {
+    font-size: 15px;
+  }
+
+  .title, .navigation {
+    margin: 15px 0;
+  }
+  .title > div {
+    padding: 0 0 0 30px;
+  }
+  .slide-menu > ul {
+    padding: 0 30px;
+  }
+  .menu-icon {
+    margin-right: 30px;
+  }
+
+  main {
+    margin-top: 54px;
+  }
+  .container {
+    margin: 0 15px;
+  }
+  .project-content, .project-details {
+    margin: 30px 15px;
+    width: 100%;
+  }
+  .logo {
+    display: none;
+  }
+
+  footer .footer-info {
+    width: 100%;
+    margin-bottom: 0px;
+    padding: 0 30px;
   }
 
 }

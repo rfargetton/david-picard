@@ -21,14 +21,17 @@
 
   <div class="project-details">
       
-    <p><?php the_field('date'); ?></p>
-    <h2><?php the_title(); ?></h2>
+    <p class='date'><?php the_field('date'); ?></p>
+    <h1><?php the_title(); ?></h1>
+
     <p>
-        <?php the_field('type'); ?></br>
-        <?php if (the_field('medium')) :
-            the_field('medium');
-          endif; ?>
+      <?php the_field('type') ?></br>
+      <?php the_field('details') ?>
     </p>
+
+    <?php if (get_field('informations')) : ?>
+      <p class='informations'><?php the_field('informations') ?></p>
+    <?php endif; ?>
 
   </div>
 
