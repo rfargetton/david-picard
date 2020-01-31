@@ -37,6 +37,10 @@ a {
   color: #666;
   text-decoration: none;
 }
+.download-link {
+  padding-top: 2rem;
+}
+
 button:focus {
   outline: 0;
 }
