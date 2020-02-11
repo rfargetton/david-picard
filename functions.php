@@ -26,23 +26,43 @@
 
   // Get Corresponding Category for each Page
 
-  function get_corresponding_category_ID( $id ) {
-    switch ($id) {
-      case 73 :
-        return 5;
-        break;
-      case 34 :
-        return 6;
-        break;
-      case 42 :
-        return 7;
-        break;
-      case 39 :
-        return 9;
-        break;
-      case 18 :
-        return 10;
-        break;
+  function get_corresponding_category_ID( $id, $lang ) {
+    if ($lang == 'fr-FR'){
+      switch ($id) {
+        case 73 :
+          return 5;
+          break;
+        case 34 :
+          return 6;
+          break;
+        case 42 :
+          return 7;
+          break;
+        case 39 :
+          return 9;
+          break;
+        case 18 :
+          return 10;
+          break;
+      }
+    } else {
+      switch ($id) {
+        case 295 :
+          return 25;
+          break;
+        case 313 :
+          return 33;
+          break;
+        case 309 :
+          return 35;
+          break;
+        case 300 :
+          return 37;
+          break;
+        case 323 :
+          return 39;
+          break;
+      }
     }
   }
 

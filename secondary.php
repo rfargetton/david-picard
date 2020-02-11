@@ -5,7 +5,8 @@
   */
 
 	get_header();
-        $cat_ID = get_corresponding_category_ID(get_the_ID());
+        $lang = get_bloginfo('language');
+        $cat_ID = get_corresponding_category_ID(get_the_ID(), $lang);
 
 ?>
 

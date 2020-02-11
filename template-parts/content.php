@@ -24,14 +24,14 @@
     <p class='date'><?php the_field('date'); ?></p>
     <h1><?php the_title(); ?></h1>
 
-    <?php if (in_category('travaux')) : ?>
+    <?php if (in_category(array(5, 25))) : ?>
       <p>
         <?php the_field('type') ?></br>
         <?php the_field('details') ?>
       </p>
     <?php endif; ?>
   
-    <?php if (in_category('expositions')) : ?>
+    <?php if (in_category(array(6, 33))) : ?>
       <p>
         <?php the_field('description') ?></br>
         <?php the_field('lieu') ?>

@@ -6,12 +6,15 @@
 
 ?>
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<?php wp_head(); ?>
-	</head>
-	<body>
+<html <?php language_attributes(); ?> >
+  <head>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name='viewport' content='width= device-width, initialscale=1' >
+
+    <?php wp_head(); ?>
+  </head>
+
+  <body <?php body_class(); ?> >
     <div class="logo loading">
       <img src="<?php echo get_template_directory_uri()."/assets/dp-logo.svg"; ?>" alt="logo">
     </div>
