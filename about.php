@@ -5,7 +5,8 @@
   */
 
 	get_header();
-  $section = strtolower(get_the_title());
+        $lang = get_bloginfo('language');
+        $cat_ID = get_corresponding_category_ID(get_the_ID(), $lang);
 
 ?>
 
@@ -39,7 +40,7 @@
         endif;  
       ?>
             
-      <?php $projects = new WP_Query(array('category_name'=> $section ));
+      <?php $projects = new WP_Query(array('cat'=> $cat_ID ));
         if($projects->have_posts()) :
 
           while($projects->have_posts()) : $projects->the_post();
