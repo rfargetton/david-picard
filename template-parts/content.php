@@ -1,9 +1,15 @@
 <?php
+
+//==========================================
+// David Picard theme content temlate part
+//==========================================
+
   $category = get_the_category()[0];
   $slideshow = get_post_galleries( get_the_ID(), false )[0];
   $gallery = get_post_galleries( get_the_ID(), false )[1];
 
 ?>
+
 <?php if ($slideshow) : ?>
   <div id="slider" class="swipe">
 

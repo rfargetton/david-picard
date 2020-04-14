@@ -13,6 +13,7 @@
     add_theme_support('menus');
     //  registering the navbar
 		register_nav_menu('top_bar', 'Top Bar');
+		register_nav_menu('footer', 'Footer');
 
   }
 

@@ -11,7 +11,7 @@
 
 ?>
 
-<li class="next cell landscape">
+<li class="previous cell">
 
   <a href="<?php echo get_permalink($previouspost->ID); ?>">
 

@@ -51,7 +51,6 @@ button:focus {
   background-color: #FFF;
   display: flex;
   position: fixed;
-  font-size: 18px;
   left: 0;
   overflow: hidden ;
   justify-content: space-between;
@@ -65,26 +64,32 @@ button:focus {
   transition: height 0.5s ;
 }
 
-.title {
-  color: #000;
+.site-title {
   margin: 30px 0;
   z-index: 1000;
-}
-.title > div {
+  margin: 30px 0;
   padding: 0 60px;
+  height: 30px;
+  font-weight: 500;
 }
+.site-title a {
+  color: #000;
+}
+
 .navigation {
   margin: 30px 0;
   width: 50%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.navigation > span {
-  cursor: pointer;
+.page-title, .post-title {
   padding: 0 30px;
   position: relative;
   z-index: 900;
+  font-size: 1rem;
+  font-weight: 300;
 }
 .slide-menu {
   background-color: #FFF;
@@ -109,13 +114,13 @@ button:focus {
 .menu-item   {
   font-size: 36px;
 }
+.menu-item a {
+  color: #000;
+}
 .lang-item {
   font-size: 18px;
   text-transform: uppercase;
   margin-top: 18px;
-}
-.menu-item a {
-  color: #000;
 }
 .menu-icon {
   background: transparent;
@@ -379,10 +384,13 @@ main {
   height: 100%;
 }
 .nextprev-navigation {
-  margin-top : 90px;
+  margin-top : 180px;
 }
 .next {
   float: right;
+}
+.nextprev-navigation li {
+  height: 325px;
 }
 .nextprev-navigation article {
   opacity: 1;
@@ -444,15 +452,26 @@ footer{
   position: relative;
   margin: 60px 0;
 }
-footer .footer-info {
+.footer-menu {
+  margin-right: 90px;
+}
+.footer-container {
   box-sizing: border-box;
-  height: auto;
-  list-style: none;
-  display: block;
+  display: flex;
+  align-items: flex-end;
   padding: 0 30px;
+  margin-top: 100px;
   position: relative;
   float: right;
   width: 50%;
+}
+.footer-menu-inner, .footer-social-inner {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-menu-inner > .menu-item   {
+  font-size: 1.15rem;
 }
 footer::after{
   clear: both;
