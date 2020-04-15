@@ -22,7 +22,6 @@
       <img src="<?php echo get_template_directory_uri()."/assets/dp-logo.svg"; ?>" alt="logo">
     </div>
       <header class="site-header">
-
         
           <p class="site-title">
             <a href="<?php echo get_home_url(); ?>"><?php echo get_bloginfo('name') ?></a>

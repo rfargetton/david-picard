@@ -4,9 +4,9 @@
   Template Name: About Page
   */
 
-	get_header();
-        $lang = get_bloginfo('language');
-        $cat_ID = get_corresponding_category_ID(get_the_ID(), $lang);
+  get_header();
+  $lang = get_bloginfo('language');
+  $cat_ID = get_corresponding_category_ID(get_the_ID(), $lang);
 
 ?>
 
@@ -21,12 +21,11 @@
             <article id="about-intro" class="project">
 
               <div class="intro-text">
-
-                  <h1><?php the_field('texte_introduction') ?></h1>
-
+                <h1><?php the_field('texte_introduction') ?></h1>
+                <a href="<?php the_field('portfolio') ?>" class="button">Télécharger le portfolio PDF</a>
               </div>
 
-              <div class="project-content">
+              <div class="project-description">
 
                 <div class="avatar">
                   <img src="<?php the_field('photo_profil'); ?>" /> 

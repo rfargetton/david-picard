@@ -19,25 +19,26 @@
 <article id="post-<?php the_ID(); ?>" class="project">
 
 
-  <div class="project-details">
+  <div class="project-facts">
       
-    <p class='date'><?php the_field('date'); ?></p>
     <h1><?php the_title(); ?></h1>
 
-    <p>
+    <p class='primary'>
       <?php the_field('type') ?></br>
       <?php the_field('details') ?>
     </p>
 
+    <p class='date'><?php the_field('date'); ?></p>
+
     <?php if (get_field('informations')) : ?>
-      <p class='informations'><?php the_field('informations') ?></p>
+      <p class='secondary'><?php the_field('informations') ?></p>
     <?php endif; ?>
 
   </div>
 
-  <div class="project-content">
+  <div class="project-description">
 
-    <div class="content">
+    <div class="description">
       <?php the_content() ?>
     </div>
 
