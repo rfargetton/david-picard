@@ -23,24 +23,29 @@
       
     <h1><?php the_title(); ?></h1>
 
-    <?php if (in_category(array(5, 25))) : ?>
-      <div class='primary'>
+    <div class='primary'>
+      <?php if (in_category(array(5, 25))) : ?>
         <?php the_field('type') ?></br>
         <?php the_field('details') ?></br>
         <?php the_field('date'); ?>
-      </div>
-    <?php endif; ?>
+      <?php endif; ?>
   
-    <?php if (in_category(array(6, 33))) : ?>
-      <div class='primary'>
+      <?php if (in_category(array(6, 33))) : ?>
         <?php the_field('description') ?></br>
         <?php the_field('lieu') ?></br>
         <?php the_field('date'); ?>
-      </div>
-    <?php endif; ?>
+      <?php endif; ?>
+    </div>
 
     <?php if (get_field('informations')) : ?>
-      <p class='secondary'><?php the_field('informations') ?></p>
+      <?php the_field('informations') ?>
+    <?php endif; ?>
+
+    <?php if (get_field('communique')) : ?>
+      <div><a class="button" href="<?php the_field('communique'); ?>" target=_blank > &darr; communiqué de presse</a></div>
+    <?php endif; ?>
+    <?php if (get_field('catalogue')) : ?>
+      <div><a class="button" href="<?php the_field('catalogue'); ?>" target=_blank > &darr; catalogue d'exposition</a></div>
     <?php endif; ?>
 
   </div>
