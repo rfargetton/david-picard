@@ -136,8 +136,9 @@
 
   function enqueue_test() {
 		wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/css/style.css', array(), false, 'all' );
+		wp_enqueue_style( 'mailchimp', "//cdn-images.mailchimp.com/embedcode/classic-10_7.css", array(), false, 'all' );
 		wp_enqueue_script( 'swipe', get_template_directory_uri() . '/assets/js/swipe.js', array(), false, true);
-                wp_enqueue_script( 'vimeo','https://player.vimeo.com/api/player.js', array(), false, true);
+                wp_enqueue_script( 'vimeo', 'https://player.vimeo.com/api/player.js', array(), false, true);
 		wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array(), false, true);
   }
 
