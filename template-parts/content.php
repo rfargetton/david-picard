@@ -1,7 +1,7 @@
 <?php
 
 //==========================================
-// David Picard theme content temlate part
+// David Picard theme content template part
 //==========================================
 
   $category = get_the_category()[0];
@@ -31,26 +31,30 @@
       
     <h1><?php the_title(); ?></h1>
 
-    <?php if (in_category(array(5, 25))) : ?>
-      <p class='primary'>
+    <div class='primary'>
+      <?php if (in_category(array(5, 25))) : ?>
         <?php the_field('type') ?></br>
-        <?php the_field('details') ?>
-      </p>
-    <?php endif; ?>
+        <?php the_field('details') ?></br>
+        <?php the_field('date'); ?>
+      <?php endif; ?>
   
-    <?php if (in_category(array(6, 33))) : ?>
-      <p class='primary'>
+      <?php if (in_category(array(6, 33))) : ?>
         <?php the_field('description') ?></br>
-        <?php the_field('lieu') ?>
-      </p>
-    <?php endif; ?>
-
-    <p class='date'><?php the_field('date'); ?></p>
+        <?php the_field('lieu') ?></br>
+        <?php the_field('date'); ?>
+      <?php endif; ?>
+    </div>
 
     <?php if (get_field('informations')) : ?>
-      <p class='secondary'><?php the_field('informations') ?></p>
+      <?php the_field('informations') ?>
     <?php endif; ?>
 
+    <?php if (get_field('communique')) : ?>
+      <div><a class="button" href="<?php the_field('communique'); ?>" target=_blank > &darr; communiqué de presse</a></div>
+    <?php endif; ?>
+    <?php if (get_field('catalogue')) : ?>
+      <div><a class="button" href="<?php the_field('catalogue'); ?>" target=_blank > &darr; catalogue d'exposition</a></div>
+    <?php endif; ?>
   </div>
 
   <div class="project-description">

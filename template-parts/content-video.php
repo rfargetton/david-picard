@@ -23,12 +23,21 @@
       
     <h1><?php the_title(); ?></h1>
 
-    <p class='primary'>
-      <?php the_field('type') ?></br>
-      <?php the_field('details') ?>
-    </p>
-
-    <p class='date'><?php the_field('date'); ?></p>
+    <?php if (in_category(array(5, 25))) : ?>
+      <div class='primary'>
+        <?php the_field('type') ?></br>
+        <?php the_field('details') ?></br>
+        <?php the_field('date'); ?>
+      </div>
+    <?php endif; ?>
+  
+    <?php if (in_category(array(6, 33))) : ?>
+      <div class='primary'>
+        <?php the_field('description') ?></br>
+        <?php the_field('lieu') ?></br>
+        <?php the_field('date'); ?>
+      </div>
+    <?php endif; ?>
 
     <?php if (get_field('informations')) : ?>
       <p class='secondary'><?php the_field('informations') ?></p>
@@ -47,7 +56,8 @@
   <div class="gallery grid">
 
 
-      <?php
+      <?php if ($gallery) :
+
         $id_array = explode(",", $gallery['ids']);
         for ($i=0; $i < count($gallery['src']); $i++) {
           $src = $gallery['src'][$i];
@@ -55,7 +65,8 @@
         ?>
           <li class="cell <?php echo get_orientation($id) ?>"><img src="<?php echo $src; ?>" /></li>
         <?php }
-      ?>
+
+      endif;?>
 
 
   </div>

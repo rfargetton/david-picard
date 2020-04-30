@@ -6,6 +6,7 @@
 
 	get_header();
         $lang = get_bloginfo('language');
+        $page_slug = strtolower(get_post_field( 'post_title' ));
         $cat_ID = get_corresponding_category_ID(get_the_ID(), $lang);
   
 ?>
@@ -17,7 +18,7 @@
       <div class="main grid">
 
           <?php
-            $args = array( 'cat' => $cat_ID );
+            $args = array( 'category_name' => $page_slug );
             $projects = new WP_Query($args);
             if($projects->have_posts()) :
 

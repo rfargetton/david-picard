@@ -10,6 +10,9 @@ body {
   font-family: 'Work Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; 
+  text-rendering: optimizeLegibility ;
+  font-smoothing: antialiased ;
+  -webkit-font-smoothing: antialiased ;
   margin: 0;
   padding: 0;
 }
@@ -58,7 +61,6 @@ button:focus {
   color: #FFF;
   font-size: 0.75rem;
   padding: 10px 20px;
-  margin-top: 2rem;
   transition: all 0.5s;
 }
 .button:hover {
@@ -119,6 +121,9 @@ button:focus {
 }
 .site-title a {
   color: #000;
+}
+.site-title a:hover {
+  color: #666;
 }
 
 .navigation {
@@ -229,6 +234,7 @@ button:focus {
 
 main {
   margin-top: 84px;
+  min-height: calc(100vh - 444px);
 }
 .container {
   margin: 0 30px;
@@ -321,8 +327,8 @@ main {
   margin: 75px 30px;
   width: calc(50% - 60px);
 }
-.project-facts > * {
-  margin-bottom: 0.5em;
+.project-facts > *, .intro-text > * {
+  margin-bottom: 1rem;
 }
 .date {
   font-style: italic;
@@ -331,7 +337,7 @@ main {
   font-weight: 600;
 }
 
-.secondary {
+.project-facts > p {
   font-size: 0.8rem;
 }
 
@@ -495,7 +501,6 @@ main {
 /* Footer */
 
 footer{
-  position: relative;
   margin: 60px 0;
 }
 .footer-menu {

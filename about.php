@@ -22,7 +22,7 @@
 
               <div class="intro-text">
                 <h1><?php the_field('texte_introduction') ?></h1>
-                <a href="<?php the_field('portfolio') ?>" class="button">Télécharger le portfolio PDF</a>
+                <a href="<?php the_field('portfolio') ?>" class="button"> &darr; Télécharger le portfolio PDF</a>
               </div>
 
               <div class="project-description">

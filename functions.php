@@ -36,7 +36,7 @@
         case 34 :
           return 6;
           break;
-        case 42 :
+        case 754 :
           return 7;
           break;
         case 39 :
@@ -54,8 +54,8 @@
         case 313 :
           return 33;
           break;
-        case 309 :
-          return 35;
+        case 789 :
+          return 68;
           break;
         case 300 :
           return 37;

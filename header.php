@@ -34,6 +34,7 @@
           <?php else : ?>
             <p class="post-title"><?php echo the_title() ?></p>
           <?php endif ?>
+
           <button id="slide-toggle" class="menu-icon">
             <span></span>
             <span></span>

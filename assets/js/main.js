@@ -146,7 +146,7 @@ window.addEventListener("scroll", throttle(slideUpHeader, 50));
 
 // Menu Animations
 
-document.getElementById("nav").addEventListener("click", function(){
+document.getElementById("slide-toggle").addEventListener("click", function(){
 
   // button animation
 
@@ -213,7 +213,7 @@ window.addEventListener("resize", throttle(tileGallery, 30), false);
 window.mySwipe = new Swipe(document.getElementById('slider'), {
   startSlide: 0,
   speed: 400,
-  auto: 3000,
+  auto: 4500,
   draggable: false,
   continuous: true,
   disableScroll: false,

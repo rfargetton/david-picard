@@ -35,6 +35,7 @@
         <?php the_field('publication') ?></br>
         par <?php the_field('auteur') ?>
       </p>
+      <a class="button" href="<?php the_field('fichier'); ?>" target=_blank > &darr; Télécharger le texte</a>
     <?php endif; ?>
 
   </div>
@@ -43,9 +44,6 @@
 
     <div class="description">
       <?php the_content() ?>
-      <?php if (in_category('textes')) : ?>
-        <a class="button" href="<?php the_field('fichier'); ?>" target=_blank > &darr; Télécharger le texte</a>
-      <?php endif; ?>
     </div>
 
   </div>
