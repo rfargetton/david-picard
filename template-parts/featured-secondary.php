@@ -35,7 +35,10 @@
         <?php the_field('publication') ?></br>
         par <?php the_field('auteur') ?>
       </p>
-      <a class="button" href="<?php the_field('fichier'); ?>" target=_blank > &darr; Télécharger le texte</a>
+      <?php if (get_field('fichier')) : ?>
+        <?php $file = get_field("fichier") ?>
+        <div><a class="button" href="<?php echo $file["url"] ?>" target=_blank > &darr; <?php echo $file["filename"] ?></a></div>
+      <?php endif; ?>
     <?php endif; ?>
 
   </div>
